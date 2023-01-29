@@ -1,6 +1,5 @@
 ﻿namespace Nidot;
 
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Godot;
 
@@ -44,7 +43,7 @@ public static class NodeExtensions
     }
 
 
-    public static List<T> GetChildNodesOfType<T>(this Node node) where T : class
+    public static List<T> GetNodesOfType<T>(this Node node) where T : class
     {
         var result = new List<T>();
         if (node == null) return default;
