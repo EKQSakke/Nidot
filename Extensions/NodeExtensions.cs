@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿namespace Nidot;
+
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Godot;
 

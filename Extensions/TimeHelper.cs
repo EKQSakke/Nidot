@@ -1,3 +1,5 @@
+namespace Nidot;
+
 public static class TimeHelper {
     public static string SecondsToFormattedString(double delta) {
         var minutes = (int)(delta / 60);

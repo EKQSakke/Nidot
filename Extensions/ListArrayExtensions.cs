@@ -1,3 +1,5 @@
+namespace Nidot;
+
 using System;
 using System.Collections.Generic;
 
