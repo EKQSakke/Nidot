@@ -1,1 +1,1 @@
-This is testfor submodules
+Nidot is collection of reusable Godot code made by me, for me.
