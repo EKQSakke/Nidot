@@ -5,7 +5,7 @@ using Godot;
 
 public static class NodeExtensions
 {
-    public static T GetNodeOfType<T>(this Node node) where T : class
+    public static T GetChildOfType<T>(this Node node) where T : class
     {
         if (node == null) return default;
 
@@ -59,7 +59,7 @@ public static class NodeExtensions
     {
         if (node == null) return default;
 
-        return node.GetTree().Root.GetNodeOfType<T>();
+        return node.GetTree().Root.GetChildOfType<T>();
     }
 
     public static T AddChildOfType<T>(this Node node) where T : Node, new() {
