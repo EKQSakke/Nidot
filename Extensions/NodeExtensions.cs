@@ -26,6 +26,11 @@ public static class NodeExtensions
         return GetResult<T>(root);
     }
 
+    public static T GetNodeFromChildren<T>(this Node node) where T : class
+    {
+        return GetResult<T>(node);
+    }
+
     private static T GetResult<T>(Node node)
     {
         if (node is T result)
