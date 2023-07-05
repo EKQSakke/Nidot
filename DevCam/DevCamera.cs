@@ -9,7 +9,7 @@ public partial class DevCamera : Node3D
     MousePosition mousePosition;
     Node selectedNode;
 
-  	const float Speed = 10.0f;
+    const float Speed = 10.0f;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -63,7 +63,10 @@ public partial class DevCamera : Node3D
                 return;
 
             selectedNode = collider.AsGodotObject() as Node;
-            GD.Print(selectedNode);
+            if (selectedNode is IDevCamerable devCamerable)
+            {
+                GD.Print(devCamerable.GetPrintInfo());
+            }
         }
     }
 
