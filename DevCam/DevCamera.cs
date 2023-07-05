@@ -11,7 +11,6 @@ public partial class DevCamera : Node3D
 
   	const float Speed = 10.0f;
 
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -24,8 +23,6 @@ public partial class DevCamera : Node3D
     public override void _PhysicsProcess(double delta)
     {
         if (cam == null) return;
-        // Get the input direction and handle the movement/deceleration.
-        // As good practice, you should replace UI actions with custom gameplay actions.
         Vector2 inputDir = Input.GetVector("left", "right", "up", "down");
         Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
         if (direction != Vector3.Zero)
@@ -88,7 +85,7 @@ public partial class DevCamera : Node3D
         var playCam = GetViewport().GetCamera3D();
         cam.Current = true;
         GetTree().Paused = true;
-        cam.GlobalPosition = playCam.GlobalPosition + new Vector3(0, 5, 5);
-        cam.GlobalRotation = new Vector3(320, 0, 0);
+        cam.GlobalPosition = playCam.GlobalPosition;
+        cam.GlobalRotation = playCam.GlobalRotation;
     }
 }
