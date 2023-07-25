@@ -67,7 +67,8 @@ public static class NodeExtensions
         return node.GetTree().Root.GetChildOfType<T>();
     }
 
-    public static T AddChildOfType<T>(this Node node) where T : Node, new() {
+    public static T AddChildOfType<T>(this Node node) where T : Node, new()
+    {
         var child = new T();
         node.AddChild(child);
         return child;
