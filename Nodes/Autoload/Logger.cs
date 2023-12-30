@@ -1,11 +1,9 @@
 namespace Nidot;
 
-using System.Collections.Generic;
-using Godot;
-
 public partial class Logger : VBoxContainer
 {
     readonly Queue<Label> logNodes = new();
+    readonly Queue<Label3D> logNodes3D = new();
 
     int logId;
 
@@ -16,7 +14,7 @@ public partial class Logger : VBoxContainer
         Alignment = AlignmentMode.End;
     }
 
-    public void Log(string message, LogLevel level = LogLevel.Error)
+    public void Log(string message, LogLevel level = LogLevel.Error, Vector3 globalPosition = new Vector3())
     {
         var label = new Label
         {
@@ -30,16 +28,36 @@ public partial class Logger : VBoxContainer
 
         logNodes.Enqueue(label);
         AddChild(label);
+
+        bool addToWorld = globalPosition != Vector3.Zero;
+        if (addToWorld)
+        {
+            var label3D = new Label3D
+            {
+                Text = message,
+                //TODO: Material override to color
+            };
+            logNodes3D.Enqueue(label3D);
+            GetTree().Root.AddChild(label3D);
+            label3D.LookAtFromPosition(globalPosition, this.GetNodeFromAll<Camera3D>().GlobalPosition, useModelFront: true);
+        }
+
+
         GD.Print($"Log: {message}");
 
         var timerManager = this.GetAutoload<TimerManager>();
 
-        timerManager.AddTimer("log" + logId++, 5, () =>
+        timerManager.AddTimer("log" + logId++, 2, () =>
                         {
                             if (logNodes.Count > 0)
                             {
                                 var qLabel = logNodes.Dequeue();
                                 qLabel.QueueFree();
+                            }
+                            if (logNodes3D.Count > 0 && addToWorld)
+                            {
+                                var qLabel3D = logNodes3D.Dequeue();
+                                qLabel3D.QueueFree();
                             }
                         });
     }
