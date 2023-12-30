@@ -1,6 +1,5 @@
 ﻿namespace Nidot;
 
-using System.Collections.Generic;
 using Godot;
 
 public static class NodeExtensions
