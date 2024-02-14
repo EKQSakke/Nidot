@@ -1,6 +1,6 @@
 ﻿namespace Nidot;
 
-public partial class TimerManager : Node
+public partial class TimerManager : Node, IAutoload
 {
     class TimedEvent
     {
@@ -70,5 +70,11 @@ public partial class TimerManager : Node
                 timers.Remove(item.Key);
             }
         }
+    }
+
+    /// <inheritdoc />
+    public void Reset()
+    {
+        timers = new();
     }
 }
