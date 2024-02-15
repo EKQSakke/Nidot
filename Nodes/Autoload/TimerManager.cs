@@ -4,23 +4,14 @@ public partial class TimerManager : Node, IAutoload
 {
     class TimedEvent
     {
-        public double Time
-        {
-            get { return Time; }
-            set
-            {
-                CurrentTime = value;
-            }
-        }
-
-        public double CurrentTime { get; private set; }
+        public double Time { get; set; }
         public event Action OnComplete;
 
         public bool ReduceTime(double delta)
         {
-            CurrentTime -= delta;
+            Time -= delta;
 
-            if (CurrentTime <= 0)
+            if (Time <= 0)
             {
                 OnComplete?.Invoke();
                 return true;
@@ -45,7 +36,7 @@ public partial class TimerManager : Node, IAutoload
             return;
         }
 
-        var newTimer =new TimedEvent()
+        var newTimer = new TimedEvent()
         {
             Time = time,
         };
