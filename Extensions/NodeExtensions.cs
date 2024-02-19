@@ -30,6 +30,11 @@ public static class NodeExtensions
         return GetResult<T>(node);
     }
 
+    public static List<T> GetNodesFromChildren<T>(this Node node) where T : class
+    {
+        return GetResults<T>(node);
+    }
+
     private static T GetResult<T>(Node node)
     {
         if (node is T result)
@@ -46,6 +51,19 @@ public static class NodeExtensions
         return default;
     }
 
+    private static List<T> GetResults<T>(Node node)
+    {
+        var list = new List<T>();
+        if (node is T result)
+            list.Add(result);
+
+        for (int i = 0; i < node.GetChildCount(); i++)
+        {
+            list.AddRange(GetResults<T>(node.GetChild(i)));
+        }
+
+        return list;
+    }
 
     public static List<T> GetNodesOfType<T>(this Node node) where T : class
     {
