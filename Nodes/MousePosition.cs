@@ -1,6 +1,4 @@
-namespace Nidot;
-
-using Godot;
+namespace TopDownZombies.Nidot.Nodes;
 
 public partial class MousePosition : Node2D
 {

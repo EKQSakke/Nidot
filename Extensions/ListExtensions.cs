@@ -1,4 +1,4 @@
-﻿namespace Nidot;
+﻿namespace TopDownZombies.Nidot.Extensions;
 
 public static class ListExtensions
 {

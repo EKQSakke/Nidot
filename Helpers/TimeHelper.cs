@@ -1,4 +1,4 @@
-namespace Nidot;
+namespace TopDownZombies.Nidot.Helpers;
 
 public static class TimeHelper {
     public static string SecondsToFormattedString(double delta) {

@@ -1,4 +1,6 @@
-namespace Nidot;
+using TopDownZombies.Nidot.Extensions;
+
+namespace TopDownZombies.Nidot.Nodes.Autoload;
 
 public partial class Logger : VBoxContainer
 {

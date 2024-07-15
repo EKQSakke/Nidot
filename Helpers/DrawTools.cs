@@ -1,6 +1,4 @@
-namespace Nidot;
-
-using Godot;
+namespace TopDownZombies.Nidot.Helpers;
 
 public static class DrawTools
 {

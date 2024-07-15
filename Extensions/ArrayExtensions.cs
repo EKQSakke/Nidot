@@ -1,7 +1,4 @@
-namespace Nidot;
-
-using System;
-using System.Collections.Generic;
+namespace TopDownZombies.Nidot.Extensions;
 
 public static class ArrayExtensions
 {

@@ -1,4 +1,6 @@
-﻿namespace Nidot;
+﻿using TopDownZombies.Nidot.Interfaces;
+
+namespace TopDownZombies.Nidot.Nodes.Autoload;
 
 public partial class TimerManager : Node, IAutoload
 {

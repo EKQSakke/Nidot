@@ -1,7 +1,6 @@
-namespace Nidot;
+using TopDownZombies.Nidot.Nodes;
 
-using Godot;
-using System;
+namespace TopDownZombies.Nidot.DevCam;
 
 public partial class DevCamera : Node3D
 {

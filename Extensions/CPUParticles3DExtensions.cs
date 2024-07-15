@@ -1,6 +1,4 @@
-﻿namespace Nidot;
-
-using Godot;
+﻿namespace TopDownZombies.Nidot.Extensions;
 
 public static class CPUParticles3DExtensions
 {
