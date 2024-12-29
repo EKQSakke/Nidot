@@ -1,4 +1,4 @@
-namespace TopDownZombies.Nidot.DevCam;
+namespace Nidot;
 
 public interface IDevCamerable
 {

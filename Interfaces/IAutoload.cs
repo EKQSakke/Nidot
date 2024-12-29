@@ -1,4 +1,4 @@
-﻿namespace TopDownZombies.Nidot.Interfaces;
+﻿namespace Nidot;
 
 public interface IAutoload
 {

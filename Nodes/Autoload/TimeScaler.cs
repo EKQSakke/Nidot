@@ -1,7 +1,4 @@
-using TopDownZombies.Nidot.Extensions;
-using TopDownZombies.Nidot.Interfaces;
-
-namespace TopDownZombies.Nidot.Nodes.Autoload;
+namespace Nidot;
 
 public partial class TimeScaler : Node, IAutoload
 {

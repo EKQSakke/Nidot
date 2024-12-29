@@ -1,4 +1,4 @@
-namespace TopDownZombies.Nidot.Nodes;
+namespace Nidot;
 
 public partial class MousePosition : Node2D
 {
